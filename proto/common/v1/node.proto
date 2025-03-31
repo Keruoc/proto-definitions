@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = "github.com/kerouc/proto-definitions/common/v1;commonv1";
+package common.v1;
+
+message Node {
+  string id = 1; // Unique identifier for the node
+  string title = 2;  // Title of the node
+}

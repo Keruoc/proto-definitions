@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "github.com/kerouc/proto-definitions/services/kss/v1;kssv1";
+package kss.v1;
+
+import "common/v1/node.proto";
+import "common/v1/link.proto";
+
+// Knowledge Storage Service (KSS) is responsible for managing and retrieving knowledge nodes and links.
+service KnowledgeStorageService {
+  // Returns similar nodes and current links based on transcript and naive nodes
+  rpc GetSuggestedNodesAndLinks(KSSRequest) returns (KSSResponse);
+}
+
+message KSSRequest {
+  string transcript = 1;
+  repeated common.v1.Node confirmed_nodes = 2;
+}
+
+message SimilarNode {
+  string id = 1;
+  string title = 2;
+  float similarity_score = 3;
+}
+
+message KSSResponse {
+  repeated SimilarNode similar_nodes = 1;
+  repeated common.v1.Link current_link = 2;
+}
