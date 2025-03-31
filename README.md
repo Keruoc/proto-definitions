@@ -59,7 +59,7 @@ go get github.com/keruoc/proto-definitions@<version-tag>
 
 Replace `<version-tag>` with the desired version (e.g., `v1.0.0`).
 
-### Example of using this as a package
+### Example of using this as a package as the server (NOT client)
 
 ```go
 package grpc
