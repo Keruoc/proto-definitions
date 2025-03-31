@@ -26,6 +26,7 @@ type Link struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                     // Unique identifier for the link
 	FromNodeId    string                 `protobuf:"bytes,2,opt,name=from_node_id,json=fromNodeId,proto3" json:"from_node_id,omitempty"` // Identifier of the source node
 	ToNodeId      string                 `protobuf:"bytes,3,opt,name=to_node_id,json=toNodeId,proto3" json:"to_node_id,omitempty"`       // Identifier of the target node
+	Relationship  string                 `protobuf:"bytes,4,opt,name=relationship,proto3" json:"relationship,omitempty"`                 // Type of relationship (e.g., "causes", "explains")
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -81,17 +82,25 @@ func (x *Link) GetToNodeId() string {
 	return ""
 }
 
+func (x *Link) GetRelationship() string {
+	if x != nil {
+		return x.Relationship
+	}
+	return ""
+}
+
 var File_common_v1_link_proto protoreflect.FileDescriptor
 
 const file_common_v1_link_proto_rawDesc = "" +
 	"\n" +
-	"\x14common/v1/link.proto\x12\tcommon.v1\"V\n" +
+	"\x14common/v1/link.proto\x12\tcommon.v1\"z\n" +
 	"\x04Link\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12 \n" +
 	"\ffrom_node_id\x18\x02 \x01(\tR\n" +
 	"fromNodeId\x12\x1c\n" +
 	"\n" +
-	"to_node_id\x18\x03 \x01(\tR\btoNodeIdB8Z6github.com/keruoc/proto-definitions/common/v1;commonv1b\x06proto3"
+	"to_node_id\x18\x03 \x01(\tR\btoNodeId\x12\"\n" +
+	"\frelationship\x18\x04 \x01(\tR\frelationshipB8Z6github.com/keruoc/proto-definitions/common/v1;commonv1b\x06proto3"
 
 var (
 	file_common_v1_link_proto_rawDescOnce sync.Once

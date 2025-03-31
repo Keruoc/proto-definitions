@@ -7,4 +7,5 @@ message Link {
   string id = 1; // Unique identifier for the link
   string from_node_id = 2; // Identifier of the source node
   string to_node_id = 3; // Identifier of the target node
+  string relationship = 4; // Type of relationship (e.g., "causes", "explains")
 }
