@@ -7,7 +7,7 @@
 package kssv1
 
 import (
-	v1 "github.com/kerouc/proto-definitions/common/v1"
+	v1 "github.com/keruoc/proto-definitions/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -205,7 +205,7 @@ const file_services_kss_v1_kss_service_proto_rawDesc = "" +
 	"\rsimilar_nodes\x18\x01 \x03(\v2\x13.kss.v1.SimilarNodeR\fsimilarNodes\x122\n" +
 	"\fcurrent_link\x18\x02 \x03(\v2\x0f.common.v1.LinkR\vcurrentLink2_\n" +
 	"\x17KnowledgeStorageService\x12D\n" +
-	"\x19GetSuggestedNodesAndLinks\x12\x12.kss.v1.KSSRequest\x1a\x13.kss.v1.KSSResponseB;Z9github.com/kerouc/proto-definitions/services/kss/v1;kssv1b\x06proto3"
+	"\x19GetSuggestedNodesAndLinks\x12\x12.kss.v1.KSSRequest\x1a\x13.kss.v1.KSSResponseB;Z9github.com/keruoc/proto-definitions/services/kss/v1;kssv1b\x06proto3"
 
 var (
 	file_services_kss_v1_kss_service_proto_rawDescOnce sync.Once

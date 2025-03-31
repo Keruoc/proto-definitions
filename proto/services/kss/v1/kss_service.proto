@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/kerouc/proto-definitions/services/kss/v1;kssv1";
+option go_package = "github.com/keruoc/proto-definitions/services/kss/v1;kssv1";
 package kss.v1;
 
 import "common/v1/node.proto";

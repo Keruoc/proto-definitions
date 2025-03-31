@@ -91,7 +91,7 @@ const file_common_v1_link_proto_rawDesc = "" +
 	"\ffrom_node_id\x18\x02 \x01(\tR\n" +
 	"fromNodeId\x12\x1c\n" +
 	"\n" +
-	"to_node_id\x18\x03 \x01(\tR\btoNodeIdB8Z6github.com/kerouc/proto-definitions/common/v1;commonv1b\x06proto3"
+	"to_node_id\x18\x03 \x01(\tR\btoNodeIdB8Z6github.com/keruoc/proto-definitions/common/v1;commonv1b\x06proto3"
 
 var (
 	file_common_v1_link_proto_rawDescOnce sync.Once

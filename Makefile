@@ -1,16 +1,13 @@
 .PHONY: gen
 
-gen:
-	@mkdir -p gen
-	@echo "Generating Go code from proto files..."
-	protoc \
-		-I=proto \
-		--go_out=gen \
-		--go-grpc_out=gen \
-		$(shell find proto -name "*.proto")
-	@echo "Done generating Go code from proto files!"
+PROTO_SRC := proto
+GEN_OUT := .
 
-clean:
-	@echo "Cleaning up generated files..."
-	@rm -rf gen
-	@echo "Done cleaning up generated files!"
+gen:
+	@echo "Generating Go code from .proto files..."
+	protoc \
+		-I=$(PROTO_SRC) \
+		--go_out=paths=source_relative:$(GEN_OUT) \
+		--go-grpc_out=paths=source_relative:$(GEN_OUT) \
+		$(shell find $(PROTO_SRC) -name "*.proto")
+	@echo "Done generating Go code."

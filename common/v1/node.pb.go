@@ -80,7 +80,7 @@ const file_common_v1_node_proto_rawDesc = "" +
 	"\x14common/v1/node.proto\x12\tcommon.v1\",\n" +
 	"\x04Node\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05title\x18\x02 \x01(\tR\x05titleB8Z6github.com/kerouc/proto-definitions/common/v1;commonv1b\x06proto3"
+	"\x05title\x18\x02 \x01(\tR\x05titleB8Z6github.com/keruoc/proto-definitions/common/v1;commonv1b\x06proto3"
 
 var (
 	file_common_v1_node_proto_rawDescOnce sync.Once
