@@ -14,10 +14,8 @@ service KnowledgeStorageService {
 
 message KSSRequest {
   string transcript = 1;
+  repeated common.v1.Node confirmed_nodes = 2;
   string workspace_id = 3;
-
-  // Archived
-  // repeated common.v1.Node confirmed_nodes = 2;
 }
 
 message SimilarNode {

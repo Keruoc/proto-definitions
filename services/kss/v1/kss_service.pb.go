@@ -23,11 +23,12 @@ const (
 )
 
 type KSSRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Transcript    string                 `protobuf:"bytes,1,opt,name=transcript,proto3" json:"transcript,omitempty"`
-	WorkspaceId   string                 `protobuf:"bytes,3,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Transcript     string                 `protobuf:"bytes,1,opt,name=transcript,proto3" json:"transcript,omitempty"`
+	ConfirmedNodes []*v1.Node             `protobuf:"bytes,2,rep,name=confirmed_nodes,json=confirmedNodes,proto3" json:"confirmed_nodes,omitempty"`
+	WorkspaceId    string                 `protobuf:"bytes,3,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *KSSRequest) Reset() {
@@ -65,6 +66,13 @@ func (x *KSSRequest) GetTranscript() string {
 		return x.Transcript
 	}
 	return ""
+}
+
+func (x *KSSRequest) GetConfirmedNodes() []*v1.Node {
+	if x != nil {
+		return x.ConfirmedNodes
+	}
+	return nil
 }
 
 func (x *KSSRequest) GetWorkspaceId() string {
@@ -190,12 +198,13 @@ var File_services_kss_v1_kss_service_proto protoreflect.FileDescriptor
 
 const file_services_kss_v1_kss_service_proto_rawDesc = "" +
 	"\n" +
-	"!services/kss/v1/kss_service.proto\x12\x06kss.v1\x1a\x14common/v1/node.proto\x1a\x14common/v1/link.proto\"O\n" +
+	"!services/kss/v1/kss_service.proto\x12\x06kss.v1\x1a\x14common/v1/node.proto\x1a\x14common/v1/link.proto\"\x89\x01\n" +
 	"\n" +
 	"KSSRequest\x12\x1e\n" +
 	"\n" +
 	"transcript\x18\x01 \x01(\tR\n" +
-	"transcript\x12!\n" +
+	"transcript\x128\n" +
+	"\x0fconfirmed_nodes\x18\x02 \x03(\v2\x0f.common.v1.NodeR\x0econfirmedNodes\x12!\n" +
 	"\fworkspace_id\x18\x03 \x01(\tR\vworkspaceId\"^\n" +
 	"\vSimilarNode\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
@@ -224,18 +233,20 @@ var file_services_kss_v1_kss_service_proto_goTypes = []any{
 	(*KSSRequest)(nil),  // 0: kss.v1.KSSRequest
 	(*SimilarNode)(nil), // 1: kss.v1.SimilarNode
 	(*KSSResponse)(nil), // 2: kss.v1.KSSResponse
-	(*v1.Link)(nil),     // 3: common.v1.Link
+	(*v1.Node)(nil),     // 3: common.v1.Node
+	(*v1.Link)(nil),     // 4: common.v1.Link
 }
 var file_services_kss_v1_kss_service_proto_depIdxs = []int32{
-	1, // 0: kss.v1.KSSResponse.similar_nodes:type_name -> kss.v1.SimilarNode
-	3, // 1: kss.v1.KSSResponse.current_link:type_name -> common.v1.Link
-	0, // 2: kss.v1.KnowledgeStorageService.GetSuggestedNodesAndLinks:input_type -> kss.v1.KSSRequest
-	2, // 3: kss.v1.KnowledgeStorageService.GetSuggestedNodesAndLinks:output_type -> kss.v1.KSSResponse
-	3, // [3:4] is the sub-list for method output_type
-	2, // [2:3] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	3, // 0: kss.v1.KSSRequest.confirmed_nodes:type_name -> common.v1.Node
+	1, // 1: kss.v1.KSSResponse.similar_nodes:type_name -> kss.v1.SimilarNode
+	4, // 2: kss.v1.KSSResponse.current_link:type_name -> common.v1.Link
+	0, // 3: kss.v1.KnowledgeStorageService.GetSuggestedNodesAndLinks:input_type -> kss.v1.KSSRequest
+	2, // 4: kss.v1.KnowledgeStorageService.GetSuggestedNodesAndLinks:output_type -> kss.v1.KSSResponse
+	4, // [4:5] is the sub-list for method output_type
+	3, // [3:4] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_services_kss_v1_kss_service_proto_init() }
