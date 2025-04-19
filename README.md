@@ -49,6 +49,15 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 
 ---
 
+## Updating the tag version
+
+```bash
+git tag <latest-version>
+git push origin <latest-version>
+```
+
+---
+
 ## Installing as a Go Package
 
 To use this as a Go package in your project, run:
